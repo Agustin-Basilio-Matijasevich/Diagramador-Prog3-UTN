@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7640B10C-F421-491E-A83F-D9DC600010A1}</ProjectGuid>
+    <ProjectGuid>{6FB9A9DD-5C3D-4386-9AD6-73DFA5D6EF33}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Diagramador</RootNamespace>
     <AssemblyName>Diagramador</AssemblyName>
