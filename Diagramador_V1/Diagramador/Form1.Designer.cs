@@ -36,11 +36,11 @@
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainerP = new System.Windows.Forms.SplitContainer();
             this.Pizarra = new Dalssoft.DiagramNet.Designer();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bttFlechaDosCruz = new System.Windows.Forms.Button();
+            this.bttFlechaCruz = new System.Windows.Forms.Button();
+            this.bttFlecha = new System.Windows.Forms.Button();
+            this.bttCuadrado = new System.Windows.Forms.Button();
+            this.bttCirculo = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerP)).BeginInit();
             this.splitContainerP.Panel1.SuspendLayout();
@@ -97,11 +97,11 @@
             // splitContainerP.Panel1
             // 
             this.splitContainerP.Panel1.AutoScroll = true;
-            this.splitContainerP.Panel1.Controls.Add(this.button5);
-            this.splitContainerP.Panel1.Controls.Add(this.button4);
-            this.splitContainerP.Panel1.Controls.Add(this.button3);
-            this.splitContainerP.Panel1.Controls.Add(this.button1);
-            this.splitContainerP.Panel1.Controls.Add(this.button2);
+            this.splitContainerP.Panel1.Controls.Add(this.bttFlechaDosCruz);
+            this.splitContainerP.Panel1.Controls.Add(this.bttFlechaCruz);
+            this.splitContainerP.Panel1.Controls.Add(this.bttFlecha);
+            this.splitContainerP.Panel1.Controls.Add(this.bttCuadrado);
+            this.splitContainerP.Panel1.Controls.Add(this.bttCirculo);
             // 
             // splitContainerP.Panel2
             // 
@@ -120,65 +120,65 @@
             this.Pizarra.Size = new System.Drawing.Size(530, 686);
             this.Pizarra.TabIndex = 0;
             // 
-            // button5
+            // bttFlechaDosCruz
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::Diagramador.Properties.Resources.FlechaDosCruz;
-            this.button5.Location = new System.Drawing.Point(32, 535);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(199, 110);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = true;
+            this.bttFlechaDosCruz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttFlechaDosCruz.FlatAppearance.BorderSize = 0;
+            this.bttFlechaDosCruz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttFlechaDosCruz.Image = global::Diagramador.Properties.Resources.FlechaDosCruz;
+            this.bttFlechaDosCruz.Location = new System.Drawing.Point(32, 535);
+            this.bttFlechaDosCruz.Name = "bttFlechaDosCruz";
+            this.bttFlechaDosCruz.Size = new System.Drawing.Size(199, 110);
+            this.bttFlechaDosCruz.TabIndex = 5;
+            this.bttFlechaDosCruz.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bttFlechaCruz
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Diagramador.Properties.Resources.FlechaCruz;
-            this.button4.Location = new System.Drawing.Point(32, 405);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 110);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
+            this.bttFlechaCruz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttFlechaCruz.FlatAppearance.BorderSize = 0;
+            this.bttFlechaCruz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttFlechaCruz.Image = global::Diagramador.Properties.Resources.FlechaCruz;
+            this.bttFlechaCruz.Location = new System.Drawing.Point(32, 405);
+            this.bttFlechaCruz.Name = "bttFlechaCruz";
+            this.bttFlechaCruz.Size = new System.Drawing.Size(199, 110);
+            this.bttFlechaCruz.TabIndex = 4;
+            this.bttFlechaCruz.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // bttFlecha
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Diagramador.Properties.Resources.Flecha;
-            this.button3.Location = new System.Drawing.Point(32, 274);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 110);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = true;
+            this.bttFlecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttFlecha.FlatAppearance.BorderSize = 0;
+            this.bttFlecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttFlecha.Image = global::Diagramador.Properties.Resources.Flecha;
+            this.bttFlecha.Location = new System.Drawing.Point(32, 274);
+            this.bttFlecha.Name = "bttFlecha";
+            this.bttFlecha.Size = new System.Drawing.Size(199, 110);
+            this.bttFlecha.TabIndex = 3;
+            this.bttFlecha.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // bttCuadrado
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Diagramador.Properties.Resources.Cuadrado;
-            this.button1.Location = new System.Drawing.Point(32, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 116);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
+            this.bttCuadrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttCuadrado.FlatAppearance.BorderSize = 0;
+            this.bttCuadrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttCuadrado.Image = global::Diagramador.Properties.Resources.Cuadrado;
+            this.bttCuadrado.Location = new System.Drawing.Point(32, 17);
+            this.bttCuadrado.Name = "bttCuadrado";
+            this.bttCuadrado.Size = new System.Drawing.Size(199, 116);
+            this.bttCuadrado.TabIndex = 2;
+            this.bttCuadrado.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // bttCirculo
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Diagramador.Properties.Resources.Circulo;
-            this.button2.Location = new System.Drawing.Point(32, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 108);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.bttCirculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttCirculo.FlatAppearance.BorderSize = 0;
+            this.bttCirculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttCirculo.Image = global::Diagramador.Properties.Resources.Circulo;
+            this.bttCirculo.Location = new System.Drawing.Point(32, 149);
+            this.bttCirculo.Name = "bttCirculo";
+            this.bttCirculo.Size = new System.Drawing.Size(199, 108);
+            this.bttCirculo.TabIndex = 1;
+            this.bttCirculo.UseVisualStyleBackColor = true;
             // 
             // FormD
             // 
@@ -211,11 +211,11 @@
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainerP;
         private Dalssoft.DiagramNet.Designer Pizarra;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bttCirculo;
+        private System.Windows.Forms.Button bttCuadrado;
+        private System.Windows.Forms.Button bttFlecha;
+        private System.Windows.Forms.Button bttFlechaDosCruz;
+        private System.Windows.Forms.Button bttFlechaCruz;
     }
 }
 
