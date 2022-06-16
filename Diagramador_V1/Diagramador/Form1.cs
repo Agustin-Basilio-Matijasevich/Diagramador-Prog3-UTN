@@ -15,6 +15,7 @@ namespace Diagramador
         public FormD()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }

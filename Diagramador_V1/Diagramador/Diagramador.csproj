@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +85,36 @@
       <Project>{46FE3660-273C-474B-BA51-835F5CDEDA58}</Project>
       <Name>Diagram.NET</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuadrado1-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone-cercle-noir-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea-diagonal-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea-diagonal-doscruz-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea-diagonal-cruz-modified-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cuadrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlechaCruz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlechaDosCruz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circulo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
