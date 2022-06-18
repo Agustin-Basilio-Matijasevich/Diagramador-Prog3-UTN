@@ -46,7 +46,9 @@ namespace Dalssoft.DiagramNet
 	public enum LinkType
 	{
 		Straight,
-		RightAngle
+		RightAngle,
+		RightAngleArrow, //Flecha
+		RightAngleDoubleArrow //Flecha Doble
 	}
 
 	internal enum LabelEditDirection

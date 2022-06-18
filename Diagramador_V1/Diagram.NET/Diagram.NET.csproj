@@ -154,6 +154,8 @@
     <Compile Include="element\controller\RectangleController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="element\controller\RightAngleArrowLinkController.cs" />
+    <Compile Include="element\controller\RightAngleDoubleArrowLinkController.cs" />
     <Compile Include="element\controller\RightAngleLinkController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -181,6 +183,8 @@
     <Compile Include="element\RectangleNode.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="element\RightAngleArrowLinkElement.cs" />
+    <Compile Include="element\RightAngleDoubleArrowLinkElement.cs" />
     <Compile Include="element\RightAngleLinkElement.cs">
       <SubType>Code</SubType>
     </Compile>

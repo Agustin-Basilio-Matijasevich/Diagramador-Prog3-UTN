@@ -9,8 +9,8 @@ namespace Dalssoft.DiagramNet
 	[Serializable]
 	public class RectangleElement : BaseElement, IControllable, ILabelElement
 	{
-		protected Color fillColor1 = Color.White;
-		protected Color fillColor2 = Color.DodgerBlue;
+		protected Color fillColor1 = Color.Transparent;
+		protected Color fillColor2 = Color.Transparent;
 		protected LabelElement label = new LabelElement();
 		
 		[NonSerialized]

@@ -35,12 +35,12 @@
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainerP = new System.Windows.Forms.SplitContainer();
-            this.Pizarra = new Dalssoft.DiagramNet.Designer();
             this.bttFlechaDosCruz = new System.Windows.Forms.Button();
             this.bttFlechaCruz = new System.Windows.Forms.Button();
             this.bttFlecha = new System.Windows.Forms.Button();
             this.bttCuadrado = new System.Windows.Forms.Button();
             this.bttCirculo = new System.Windows.Forms.Button();
+            this.Pizarra = new Dalssoft.DiagramNet.Designer();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerP)).BeginInit();
             this.splitContainerP.Panel1.SuspendLayout();
@@ -54,9 +54,10 @@
             this.archivoToolStripMenuItem});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(800, 24);
+            this.Menu.Size = new System.Drawing.Size(1084, 24);
             this.Menu.TabIndex = 0;
             this.Menu.Text = "Menu";
+            this.Menu.Click += new System.EventHandler(this.Menu_Click);
             // 
             // archivoToolStripMenuItem
             // 
@@ -106,19 +107,9 @@
             // splitContainerP.Panel2
             // 
             this.splitContainerP.Panel2.Controls.Add(this.Pizarra);
-            this.splitContainerP.Size = new System.Drawing.Size(800, 686);
+            this.splitContainerP.Size = new System.Drawing.Size(1084, 687);
             this.splitContainerP.SplitterDistance = 266;
             this.splitContainerP.TabIndex = 1;
-            // 
-            // Pizarra
-            // 
-            this.Pizarra.AutoScroll = true;
-            this.Pizarra.BackColor = System.Drawing.SystemColors.Window;
-            this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pizarra.Location = new System.Drawing.Point(0, 0);
-            this.Pizarra.Name = "Pizarra";
-            this.Pizarra.Size = new System.Drawing.Size(530, 686);
-            this.Pizarra.TabIndex = 0;
             // 
             // bttFlechaDosCruz
             // 
@@ -131,6 +122,7 @@
             this.bttFlechaDosCruz.Size = new System.Drawing.Size(199, 110);
             this.bttFlechaDosCruz.TabIndex = 5;
             this.bttFlechaDosCruz.UseVisualStyleBackColor = true;
+            this.bttFlechaDosCruz.Click += new System.EventHandler(this.bttFlechaDosCruz_Click);
             // 
             // bttFlechaCruz
             // 
@@ -143,6 +135,7 @@
             this.bttFlechaCruz.Size = new System.Drawing.Size(199, 110);
             this.bttFlechaCruz.TabIndex = 4;
             this.bttFlechaCruz.UseVisualStyleBackColor = true;
+            this.bttFlechaCruz.Click += new System.EventHandler(this.bttFlechaCruz_Click);
             // 
             // bttFlecha
             // 
@@ -155,6 +148,7 @@
             this.bttFlecha.Size = new System.Drawing.Size(199, 110);
             this.bttFlecha.TabIndex = 3;
             this.bttFlecha.UseVisualStyleBackColor = true;
+            this.bttFlecha.Click += new System.EventHandler(this.bttFlecha_Click);
             // 
             // bttCuadrado
             // 
@@ -167,6 +161,7 @@
             this.bttCuadrado.Size = new System.Drawing.Size(199, 116);
             this.bttCuadrado.TabIndex = 2;
             this.bttCuadrado.UseVisualStyleBackColor = true;
+            this.bttCuadrado.Click += new System.EventHandler(this.bttCuadrado_Click);
             // 
             // bttCirculo
             // 
@@ -179,18 +174,33 @@
             this.bttCirculo.Size = new System.Drawing.Size(199, 108);
             this.bttCirculo.TabIndex = 1;
             this.bttCirculo.UseVisualStyleBackColor = true;
+            this.bttCirculo.Click += new System.EventHandler(this.bttCirculo_Click);
+            // 
+            // Pizarra
+            // 
+            this.Pizarra.AutoScroll = true;
+            this.Pizarra.BackColor = System.Drawing.SystemColors.Window;
+            this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pizarra.Location = new System.Drawing.Point(0, 0);
+            this.Pizarra.Name = "Pizarra";
+            this.Pizarra.Size = new System.Drawing.Size(814, 687);
+            this.Pizarra.TabIndex = 0;
+            this.Pizarra.Click += new System.EventHandler(this.Pizarra_Click);
             // 
             // FormD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 710);
+            this.ClientSize = new System.Drawing.Size(1084, 711);
             this.Controls.Add(this.splitContainerP);
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menu;
+            this.MinimumSize = new System.Drawing.Size(1100, 750);
             this.Name = "FormD";
             this.Text = "Diagramador G10";
+            this.Load += new System.EventHandler(this.FormD_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormD_KeyUp);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.splitContainerP.Panel1.ResumeLayout(false);

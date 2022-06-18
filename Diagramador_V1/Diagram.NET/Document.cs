@@ -78,13 +78,32 @@ namespace Dalssoft.DiagramNet
 		{
 			if (CanAddLink(connStart, connEnd))
 			{
-				BaseLinkElement lnk;
+				BaseLinkElement lnk = new RightAngleLinkElement(connStart, connEnd); //Tipo de Linea por defecto
 				
-				if (linkType == LinkType.Straight)
-					lnk = new StraightLinkElement(connStart, connEnd);
-				else // (linkType == LinkType.RightAngle)
-					lnk = new RightAngleLinkElement(connStart, connEnd);
-
+				switch (linkType) //Crea el elemento de link base con el tipo de linea correspondiente
+                {
+					case LinkType.Straight:
+                        {
+							lnk = new StraightLinkElement(connStart, connEnd);
+							break;
+                        }
+					case LinkType.RightAngle:
+                        {
+							lnk = new RightAngleLinkElement(connStart, connEnd);
+							break;
+                        }
+					case LinkType.RightAngleArrow:
+                        {
+							lnk = new RightAngleArrowLinkElement(connStart, connEnd);
+							break;
+                        }
+					case LinkType.RightAngleDoubleArrow:
+                        {
+							lnk = new RightAngleDoubleArrowLinkElement(connStart, connEnd);
+							break;
+                        }
+                }
+				
 				elements.Add(lnk);
 				lnk.AppearanceChanged +=new EventHandler(element_AppearanceChanged);
 				OnAppearancePropertyChanged(new EventArgs());

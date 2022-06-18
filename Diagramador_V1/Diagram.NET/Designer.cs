@@ -983,6 +983,16 @@ namespace Dalssoft.DiagramNet
 					case (LinkType.RightAngle):
 						linkLine = new RightAngleLinkElement(connStart, connEnd);
 						break;
+                    case (LinkType.RightAngleArrow): //Flecha
+                        {
+                            linkLine = new RightAngleArrowLinkElement(connStart, connEnd);
+                            break;
+                        }
+                    case (LinkType.RightAngleDoubleArrow): //Flecha Doble
+                        {
+                            linkLine = new RightAngleDoubleArrowLinkElement(connStart, connEnd);
+                            break;
+                        }
 				}
 				linkLine.Visible = true;
 				linkLine.BorderColor = Color.FromArgb(150, Color.Black);
@@ -1131,5 +1141,16 @@ namespace Dalssoft.DiagramNet
 			document.ElementPropertyChanged += new EventHandler(document_ElementPropertyChanged);
 			document.ElementSelection += new Document.ElementSelectionEventHandler(document_ElementSelection);
 		}
-	}
+
+        #region Metodos Extra
+        public void Liberar_Seleccion() //Libera La Seleccion de componentes
+        {
+            document.ClearSelection(); //Libera la seleccion
+            resizeAction = null; //Libera el Rezise
+            EndEditLabel(); //Libera el Label
+
+        }
+        #endregion
+
+    }
 }
