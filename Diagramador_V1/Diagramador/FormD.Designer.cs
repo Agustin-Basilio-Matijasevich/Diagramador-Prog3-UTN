@@ -54,7 +54,7 @@
             this.archivoToolStripMenuItem});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(800, 24);
+            this.Menu.Size = new System.Drawing.Size(1084, 24);
             this.Menu.TabIndex = 0;
             this.Menu.Text = "Menu";
             this.Menu.Click += new System.EventHandler(this.Menu_Click);
@@ -107,7 +107,7 @@
             // splitContainerP.Panel2
             // 
             this.splitContainerP.Panel2.Controls.Add(this.Pizarra);
-            this.splitContainerP.Size = new System.Drawing.Size(800, 686);
+            this.splitContainerP.Size = new System.Drawing.Size(1084, 687);
             this.splitContainerP.SplitterDistance = 266;
             this.splitContainerP.TabIndex = 1;
             // 
@@ -183,7 +183,7 @@
             this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pizarra.Location = new System.Drawing.Point(0, 0);
             this.Pizarra.Name = "Pizarra";
-            this.Pizarra.Size = new System.Drawing.Size(530, 686);
+            this.Pizarra.Size = new System.Drawing.Size(814, 687);
             this.Pizarra.TabIndex = 0;
             this.Pizarra.Click += new System.EventHandler(this.Pizarra_Click);
             // 
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 710);
+            this.ClientSize = new System.Drawing.Size(1084, 711);
             this.Controls.Add(this.splitContainerP);
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
