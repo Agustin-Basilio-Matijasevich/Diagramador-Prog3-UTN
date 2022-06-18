@@ -13,7 +13,7 @@ namespace Dalssoft.DiagramNet
 	public abstract class NodeElement: BaseElement
 	{
 		protected ConnectorElement[] connects = new ConnectorElement[4];
-		protected const int connectSize = 3;
+		protected const int connectSize = 5;
 		
 //		public NodeElement(): base() 
 //		{
