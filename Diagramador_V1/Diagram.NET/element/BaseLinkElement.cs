@@ -20,7 +20,7 @@ namespace Dalssoft.DiagramNet
 
 		internal BaseLinkElement(ConnectorElement conn1, ConnectorElement conn2): base()
 		{
-			borderWidth = 1;
+			borderWidth = 4;
 			borderColor = Color.Black;
 
 			connector1 = conn1;
