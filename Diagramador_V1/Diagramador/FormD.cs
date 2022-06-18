@@ -26,14 +26,41 @@ namespace Diagramador
         #endregion
 
         #region Metodos
-        private void Liberar()
+        private void Liberar() //Libera la forma de cualquier accion pendiente
         {
             bttCirculo.BackColor = Color.Empty;
             bttCuadrado.BackColor = Color.Empty;
             bttFlecha.BackColor = Color.Empty;
             bttFlechaCruz.BackColor = Color.Empty;
             bttFlechaDosCruz.BackColor = Color.Empty;
-            Pizarra.Document.Action = DesignerAction.Select;
+            Pizarra.Document.Action = DesignerAction.Select; //Modo de seleccion de la pizarra
+        }
+        private void Añadir_Nodo(ElementType NT) //Configura la forma para añadir un nodo
+        {
+            Liberar();
+            Pizarra.Document.Action = DesignerAction.Add; //Modo de añadr de la pizarra
+
+            switch (NT) //Pinta el boton presionado de verde o anula la operacion en caso de inconsistencia
+            {
+                case ElementType.RectangleNode:
+                    {
+                        bttCuadrado.BackColor = Color.Green;
+                        break;
+                    }
+                case ElementType.ElipseNode:
+                    {
+                        bttCirculo.BackColor = Color.Green;
+                        break;
+                    }
+                default:
+                    {
+                        Liberar();
+                        return;
+                    }
+            }
+
+            Pizarra.Document.ElementType = NT; //Indica el tipo de nodo a añadir
+
         }
         #endregion
 
