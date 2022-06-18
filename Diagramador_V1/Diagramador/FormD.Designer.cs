@@ -57,6 +57,7 @@
             this.Menu.Size = new System.Drawing.Size(800, 24);
             this.Menu.TabIndex = 0;
             this.Menu.Text = "Menu";
+            this.Menu.Click += new System.EventHandler(this.Menu_Click);
             // 
             // archivoToolStripMenuItem
             // 
@@ -184,6 +185,7 @@
             this.Pizarra.Name = "Pizarra";
             this.Pizarra.Size = new System.Drawing.Size(530, 686);
             this.Pizarra.TabIndex = 0;
+            this.Pizarra.Click += new System.EventHandler(this.Pizarra_Click);
             // 
             // FormD
             // 
@@ -196,6 +198,8 @@
             this.MainMenuStrip = this.Menu;
             this.Name = "FormD";
             this.Text = "Diagramador G10";
+            this.Load += new System.EventHandler(this.FormD_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormD_KeyUp);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.splitContainerP.Panel1.ResumeLayout(false);

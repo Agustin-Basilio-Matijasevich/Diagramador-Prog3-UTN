@@ -23,6 +23,10 @@ namespace Diagramador
             InitializeComponent();
             this.CenterToScreen();
         }
+        private void FormD_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true; //Permite que la forma reciba las teclas antes que los componentes
+        }
         #endregion
 
         #region Metodos
@@ -117,6 +121,32 @@ namespace Diagramador
         private void bttFlechaDosCruz_Click(object sender, EventArgs e)
         {
             Conectar_Nodos(LinkType.RightAngleDoubleArrow);
+        }
+        private void Pizarra_Click(object sender, EventArgs e)
+        {
+            Liberar();
+        }
+        private void Menu_Click(object sender, EventArgs e)
+        {
+            Liberar();
+        }
+        private void FormD_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    {
+                        Liberar();
+                        e.Handled = true;
+                        break;
+                    }
+                default:
+                    {
+                        e.Handled = false;
+                        break;
+                    }
+            }
+
         }
         #endregion
 
