@@ -62,11 +62,48 @@ namespace Diagramador
             Pizarra.Document.ElementType = NT; //Indica el tipo de nodo a añadir
 
         }
+
+        private void Conectar_Nodos(LinkType LT)
+        {
+            Liberar();
+            Pizarra.Document.Action = DesignerAction.Connect; //Modo Conectar de la Pizarra
+
+            switch (LT) //Pinta el boton presionado de verde o anula la operacion en caso de inconsistencia
+            {
+                case LinkType.RightAngle:
+                    {
+                        bttFlecha.BackColor = Color.Green;
+                        break;
+                    }
+                case LinkType.RightAngleArrow:
+                    {
+                        bttFlechaCruz.BackColor = Color.Green;
+                        break;
+                    }
+                case LinkType.RightAngleDoubleArrow:
+                    {
+                        bttFlechaDosCruz.BackColor = Color.Green;
+                        break;
+                    }
+                default:
+                    {
+                        Liberar();
+                        return;
+                    }
+            }
+
+            Pizarra.Document.LinkType = LT; //Indica el tipo de flecha a utilizar
+
+        }
         #endregion
 
         #region Handlers
-
+        private void bttCuadrado_Click(object sender, EventArgs e)
+        {
+            Añadir_Nodo(ElementType.RectangleNode);
+        }
         #endregion
+
 
     }
 }

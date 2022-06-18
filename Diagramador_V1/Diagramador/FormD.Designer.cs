@@ -35,12 +35,12 @@
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainerP = new System.Windows.Forms.SplitContainer();
-            this.Pizarra = new Dalssoft.DiagramNet.Designer();
             this.bttFlechaDosCruz = new System.Windows.Forms.Button();
             this.bttFlechaCruz = new System.Windows.Forms.Button();
             this.bttFlecha = new System.Windows.Forms.Button();
             this.bttCuadrado = new System.Windows.Forms.Button();
             this.bttCirculo = new System.Windows.Forms.Button();
+            this.Pizarra = new Dalssoft.DiagramNet.Designer();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerP)).BeginInit();
             this.splitContainerP.Panel1.SuspendLayout();
@@ -110,16 +110,6 @@
             this.splitContainerP.SplitterDistance = 266;
             this.splitContainerP.TabIndex = 1;
             // 
-            // Pizarra
-            // 
-            this.Pizarra.AutoScroll = true;
-            this.Pizarra.BackColor = System.Drawing.SystemColors.Window;
-            this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pizarra.Location = new System.Drawing.Point(0, 0);
-            this.Pizarra.Name = "Pizarra";
-            this.Pizarra.Size = new System.Drawing.Size(530, 686);
-            this.Pizarra.TabIndex = 0;
-            // 
             // bttFlechaDosCruz
             // 
             this.bttFlechaDosCruz.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -167,6 +157,7 @@
             this.bttCuadrado.Size = new System.Drawing.Size(199, 116);
             this.bttCuadrado.TabIndex = 2;
             this.bttCuadrado.UseVisualStyleBackColor = true;
+            this.bttCuadrado.Click += new System.EventHandler(this.bttCuadrado_Click);
             // 
             // bttCirculo
             // 
@@ -179,6 +170,16 @@
             this.bttCirculo.Size = new System.Drawing.Size(199, 108);
             this.bttCirculo.TabIndex = 1;
             this.bttCirculo.UseVisualStyleBackColor = true;
+            // 
+            // Pizarra
+            // 
+            this.Pizarra.AutoScroll = true;
+            this.Pizarra.BackColor = System.Drawing.SystemColors.Window;
+            this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pizarra.Location = new System.Drawing.Point(0, 0);
+            this.Pizarra.Name = "Pizarra";
+            this.Pizarra.Size = new System.Drawing.Size(530, 686);
+            this.Pizarra.TabIndex = 0;
             // 
             // FormD
             // 
