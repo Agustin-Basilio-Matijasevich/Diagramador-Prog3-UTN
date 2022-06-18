@@ -121,6 +121,7 @@
             this.bttFlechaDosCruz.Size = new System.Drawing.Size(199, 110);
             this.bttFlechaDosCruz.TabIndex = 5;
             this.bttFlechaDosCruz.UseVisualStyleBackColor = true;
+            this.bttFlechaDosCruz.Click += new System.EventHandler(this.bttFlechaDosCruz_Click);
             // 
             // bttFlechaCruz
             // 
@@ -133,6 +134,7 @@
             this.bttFlechaCruz.Size = new System.Drawing.Size(199, 110);
             this.bttFlechaCruz.TabIndex = 4;
             this.bttFlechaCruz.UseVisualStyleBackColor = true;
+            this.bttFlechaCruz.Click += new System.EventHandler(this.bttFlechaCruz_Click);
             // 
             // bttFlecha
             // 
@@ -145,6 +147,7 @@
             this.bttFlecha.Size = new System.Drawing.Size(199, 110);
             this.bttFlecha.TabIndex = 3;
             this.bttFlecha.UseVisualStyleBackColor = true;
+            this.bttFlecha.Click += new System.EventHandler(this.bttFlecha_Click);
             // 
             // bttCuadrado
             // 
@@ -170,6 +173,7 @@
             this.bttCirculo.Size = new System.Drawing.Size(199, 108);
             this.bttCirculo.TabIndex = 1;
             this.bttCirculo.UseVisualStyleBackColor = true;
+            this.bttCirculo.Click += new System.EventHandler(this.bttCirculo_Click);
             // 
             // Pizarra
             // 

@@ -102,8 +102,23 @@ namespace Diagramador
         {
             Añadir_Nodo(ElementType.RectangleNode);
         }
+        private void bttCirculo_Click(object sender, EventArgs e)
+        {
+            Añadir_Nodo(ElementType.ElipseNode);
+        }
+        private void bttFlecha_Click(object sender, EventArgs e)
+        {
+            Conectar_Nodos(LinkType.RightAngle);
+        }
+        private void bttFlechaCruz_Click(object sender, EventArgs e)
+        {
+            Conectar_Nodos(LinkType.RightAngleArrow);
+        }
+        private void bttFlechaDosCruz_Click(object sender, EventArgs e)
+        {
+            Conectar_Nodos(LinkType.RightAngleDoubleArrow);
+        }
         #endregion
-
 
     }
 }
