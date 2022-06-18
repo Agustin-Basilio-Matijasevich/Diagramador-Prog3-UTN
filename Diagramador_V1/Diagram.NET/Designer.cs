@@ -983,6 +983,16 @@ namespace Dalssoft.DiagramNet
 					case (LinkType.RightAngle):
 						linkLine = new RightAngleLinkElement(connStart, connEnd);
 						break;
+                    case (LinkType.RightAngleArrow): //Flecha
+                        {
+                            linkLine = new RightAngleArrowLinkElement(connStart, connEnd);
+                            break;
+                        }
+                    case (LinkType.RightAngleDoubleArrow): //Flecha Doble
+                        {
+                            linkLine = new RightAngleDoubleArrowLinkElement(connStart, connEnd);
+                            break;
+                        }
 				}
 				linkLine.Visible = true;
 				linkLine.BorderColor = Color.FromArgb(150, Color.Black);
