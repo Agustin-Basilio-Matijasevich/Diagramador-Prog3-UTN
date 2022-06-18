@@ -196,6 +196,7 @@
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menu;
+            this.MinimumSize = new System.Drawing.Size(1100, 750);
             this.Name = "FormD";
             this.Text = "Diagramador G10";
             this.Load += new System.EventHandler(this.FormD_Load);
