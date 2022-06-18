@@ -17,7 +17,7 @@ namespace Dalssoft.DiagramNet
 		protected Size size;
 		protected bool visible = true;
 		protected Color borderColor = Color.Black;
-		protected int borderWidth = 1;
+		protected int borderWidth = 4;
 		protected int opacity = 100;
 		internal protected Rectangle invalidateRec = Rectangle.Empty;
 		internal protected bool IsInvalidated = true;
