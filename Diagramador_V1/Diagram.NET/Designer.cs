@@ -1141,5 +1141,16 @@ namespace Dalssoft.DiagramNet
 			document.ElementPropertyChanged += new EventHandler(document_ElementPropertyChanged);
 			document.ElementSelection += new Document.ElementSelectionEventHandler(document_ElementSelection);
 		}
-	}
+
+        #region Metodos Extra
+        public void Liberar_Seleccion() //Libera La Seleccion de componentes
+        {
+            document.ClearSelection(); //Libera la seleccion
+            resizeAction = null; //Libera el Rezise
+            EndEditLabel(); //Libera el Label
+
+        }
+        #endregion
+
+    }
 }

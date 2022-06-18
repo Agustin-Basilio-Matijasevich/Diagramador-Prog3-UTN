@@ -39,9 +39,19 @@ namespace Diagramador
             bttFlechaDosCruz.BackColor = Color.Empty;
             Pizarra.Document.Action = DesignerAction.Select; //Modo de seleccion de la pizarra
         }
+        private void Liberar_Todo() //Libera Todos los recursos de la forma
+        {
+            bttCirculo.BackColor = Color.Empty;
+            bttCuadrado.BackColor = Color.Empty;
+            bttFlecha.BackColor = Color.Empty;
+            bttFlechaCruz.BackColor = Color.Empty;
+            bttFlechaDosCruz.BackColor = Color.Empty;
+            Pizarra.Document.Action = DesignerAction.Select; //Modo de seleccion de la pizarra
+            Pizarra.Liberar_Seleccion(); //Libera la seleccion de la Pizarra
+        }
         private void Añadir_Nodo(ElementType NT) //Configura la forma para añadir un nodo
         {
-            Liberar();
+            Liberar_Todo();
             Pizarra.Document.Action = DesignerAction.Add; //Modo de añadr de la pizarra
 
             switch (NT) //Pinta el boton presionado de verde o anula la operacion en caso de inconsistencia
@@ -69,7 +79,7 @@ namespace Diagramador
 
         private void Conectar_Nodos(LinkType LT)
         {
-            Liberar();
+            Liberar_Todo();
             Pizarra.Document.Action = DesignerAction.Connect; //Modo Conectar de la Pizarra
 
             switch (LT) //Pinta el boton presionado de verde o anula la operacion en caso de inconsistencia
@@ -128,7 +138,7 @@ namespace Diagramador
         }
         private void Menu_Click(object sender, EventArgs e)
         {
-            Liberar();
+            Liberar_Todo();
         }
         private void FormD_KeyUp(object sender, KeyEventArgs e)
         {
@@ -136,7 +146,7 @@ namespace Diagramador
             {
                 case Keys.Escape:
                     {
-                        Liberar();
+                        Liberar_Todo();
                         e.Handled = true;
                         break;
                     }
