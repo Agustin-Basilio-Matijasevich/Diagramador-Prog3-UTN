@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dalssoft.DiagramNet;
 
 namespace Diagramador
 {
@@ -25,7 +26,15 @@ namespace Diagramador
         #endregion
 
         #region Metodos
-
+        private void Liberar()
+        {
+            bttCirculo.BackColor = Color.Empty;
+            bttCuadrado.BackColor = Color.Empty;
+            bttFlecha.BackColor = Color.Empty;
+            bttFlechaCruz.BackColor = Color.Empty;
+            bttFlechaDosCruz.BackColor = Color.Empty;
+            Pizarra.Document.Action = DesignerAction.Select;
+        }
         #endregion
 
         #region Handlers
