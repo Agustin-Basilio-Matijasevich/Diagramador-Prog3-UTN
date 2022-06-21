@@ -41,6 +41,10 @@
             this.bttCuadrado = new System.Windows.Forms.Button();
             this.bttCirculo = new System.Windows.Forms.Button();
             this.Pizarra = new Dalssoft.DiagramNet.Designer();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imagenpngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerP)).BeginInit();
             this.splitContainerP.Panel1.SuspendLayout();
@@ -64,7 +68,8 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem,
             this.abrirToolStripMenuItem,
-            this.guardarToolStripMenuItem});
+            this.guardarToolStripMenuItem,
+            this.exportarToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -72,20 +77,22 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo...";
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // splitContainerP
             // 
@@ -187,6 +194,37 @@
             this.Pizarra.TabIndex = 0;
             this.Pizarra.Click += new System.EventHandler(this.Pizarra_Click);
             // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imagenpngToolStripMenuItem});
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportarToolStripMenuItem.Text = "Exportar...";
+            // 
+            // imagenpngToolStripMenuItem
+            // 
+            this.imagenpngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pngToolStripMenuItem,
+            this.jpegToolStripMenuItem});
+            this.imagenpngToolStripMenuItem.Name = "imagenpngToolStripMenuItem";
+            this.imagenpngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imagenpngToolStripMenuItem.Text = "Imagen";
+            // 
+            // pngToolStripMenuItem
+            // 
+            this.pngToolStripMenuItem.Name = "pngToolStripMenuItem";
+            this.pngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pngToolStripMenuItem.Text = "(.png)";
+            this.pngToolStripMenuItem.Click += new System.EventHandler(this.pngToolStripMenuItem_Click);
+            // 
+            // jpegToolStripMenuItem
+            // 
+            this.jpegToolStripMenuItem.Name = "jpegToolStripMenuItem";
+            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jpegToolStripMenuItem.Text = "(.jpeg)";
+            this.jpegToolStripMenuItem.Click += new System.EventHandler(this.jpegToolStripMenuItem_Click);
+            // 
             // FormD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +264,10 @@
         private System.Windows.Forms.Button bttFlecha;
         private System.Windows.Forms.Button bttFlechaDosCruz;
         private System.Windows.Forms.Button bttFlechaCruz;
+        private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imagenpngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jpegToolStripMenuItem;
     }
 }
 
