@@ -116,6 +116,16 @@ namespace Diagramador
             Pizarra.Document.LinkType = LT; //Indica el tipo de flecha a utilizar
 
         }
+        private void Abrir()
+        {
+            if (OpenDialog.ShowDialog() == DialogResult.OK)
+            {
+                Pizarra.Open(OpenDialog.FileName); //Carga el archivo en la pizarra
+                SaveDialog.FileName = OpenDialog.FileName; //Pasa al save el nombre del archivo abierto
+                OpenDialog.Dispose(); //Libera recursos del Dialog
+                Liberar_Todo(); //Libera recursos de pizarra para refrescarla
+            }
+        }
         #endregion
 
         #region Handlers
@@ -167,7 +177,7 @@ namespace Diagramador
         }
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Abrir();
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
