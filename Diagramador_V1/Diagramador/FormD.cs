@@ -9,7 +9,8 @@ namespace Diagramador
     public partial class FormD : Form
     {
         #region Variables y Constantes
-
+        private SaveFileDialog SaveDialog; //Para guardar el estado de guardado en ejecucion y plantilla
+        private OpenFileDialog OpenDialog; //Para plantilla de apertura
         #endregion
 
         #region Load
@@ -20,7 +21,18 @@ namespace Diagramador
         }
         private void FormD_Load(object sender, EventArgs e)
         {
+            #region Config Forma
             this.KeyPreview = true; //Permite que la forma reciba las teclas antes que los componentes
+            #endregion
+            #region Plantillas SaveDialogs
+            SaveDialog = new SaveFileDialog();
+            OpenDialog = new OpenFileDialog();
+            // Save
+            SaveDialog.FileName = "Diagrama";
+            SaveDialog.Filter = "Archivo JSON (*.JSON)|*.JSON|Archivo XML (*.XML)|*.XML";
+            // Open
+            OpenDialog.Filter = "Extensiones Compatibles (*.JSON,*.XML)|*.JSON;*.XML";
+            #endregion
         }
         #endregion
 
