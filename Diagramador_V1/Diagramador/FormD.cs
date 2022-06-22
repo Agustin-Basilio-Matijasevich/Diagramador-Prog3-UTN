@@ -120,10 +120,20 @@ namespace Diagramador
         {
             if (OpenDialog.ShowDialog() == DialogResult.OK)
             {
-                Pizarra.Open(OpenDialog.FileName); //Carga el archivo en la pizarra
-                SaveDialog.FileName = OpenDialog.FileName; //Pasa al save el nombre del archivo abierto
-                OpenDialog.Dispose(); //Libera recursos del Dialog
-                Liberar_Todo(); //Libera recursos de pizarra para refrescarla
+                if (Pizarra.Open(OpenDialog.FileName)) //Carga el archivo en la pizarra
+                {
+                    SaveDialog.FileName = OpenDialog.FileName; //Pasa al save el nombre del archivo abierto
+                    OpenDialog.FileName = null; //El Open olvida el archivo
+                    OpenDialog.Dispose(); //Libera recursos del Dialog
+                    Liberar_Todo(); //Libera recursos de pizarra para refrescarla
+                    MessageBox.Show("Archivo Abierto Correctamente");
+                }
+                else //Error cargando archivo
+                {
+                    OpenDialog.Dispose(); //Libera recursos del Dialog
+                    Liberar_Todo(); //Libera recursos de pizarra para refrescarla
+                    MessageBox.Show("Error Abriendo Archivo:\nArchivo Corrupto");
+                }
             }
         }
         #endregion
