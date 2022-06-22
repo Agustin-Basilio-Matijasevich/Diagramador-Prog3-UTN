@@ -283,6 +283,16 @@ namespace Diagramador
         {
             Nuevo();
         }
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Este es el Proyecto Final del Grupo 10 para la materia Programacion 3" +
+                " en la UTN.\nAutores:\nBasilio Matijasevich, Agustin\nLopez Frutos Alex\nCabrera, Daniel\n" +
+                "Guini, Galo\nBarrabino, Luciano\n\n¿Desea ver el Codigo Fuente?",
+                "Informacion", MessageBoxButtons.YesNo))
+            {
+                System.Diagnostics.Process.Start("https://github.com/Agustin-Basilio-Matijasevich/Diagramador-Prog3-UTN");
+            }
+        }
         #endregion
     }
 }
