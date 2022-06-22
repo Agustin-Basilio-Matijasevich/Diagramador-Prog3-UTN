@@ -40,11 +40,11 @@
             this.bttFlecha = new System.Windows.Forms.Button();
             this.bttCuadrado = new System.Windows.Forms.Button();
             this.bttCirculo = new System.Windows.Forms.Button();
-            this.Pizarra = new Dalssoft.DiagramNet.Designer();
             this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imagenpngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Pizarra = new Dalssoft.DiagramNet.Designer();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerP)).BeginInit();
             this.splitContainerP.Panel1.SuspendLayout();
@@ -79,6 +79,7 @@
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo...";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
@@ -183,17 +184,6 @@
             this.bttCirculo.UseVisualStyleBackColor = true;
             this.bttCirculo.Click += new System.EventHandler(this.bttCirculo_Click);
             // 
-            // Pizarra
-            // 
-            this.Pizarra.AutoScroll = true;
-            this.Pizarra.BackColor = System.Drawing.SystemColors.Window;
-            this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pizarra.Location = new System.Drawing.Point(0, 0);
-            this.Pizarra.Name = "Pizarra";
-            this.Pizarra.Size = new System.Drawing.Size(814, 687);
-            this.Pizarra.TabIndex = 0;
-            this.Pizarra.Click += new System.EventHandler(this.Pizarra_Click);
-            // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -208,22 +198,33 @@
             this.pngToolStripMenuItem,
             this.jpegToolStripMenuItem});
             this.imagenpngToolStripMenuItem.Name = "imagenpngToolStripMenuItem";
-            this.imagenpngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imagenpngToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.imagenpngToolStripMenuItem.Text = "Imagen";
             // 
             // pngToolStripMenuItem
             // 
             this.pngToolStripMenuItem.Name = "pngToolStripMenuItem";
-            this.pngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pngToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.pngToolStripMenuItem.Text = "(.png)";
             this.pngToolStripMenuItem.Click += new System.EventHandler(this.pngToolStripMenuItem_Click);
             // 
             // jpegToolStripMenuItem
             // 
             this.jpegToolStripMenuItem.Name = "jpegToolStripMenuItem";
-            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jpegToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.jpegToolStripMenuItem.Text = "(.jpeg)";
             this.jpegToolStripMenuItem.Click += new System.EventHandler(this.jpegToolStripMenuItem_Click);
+            // 
+            // Pizarra
+            // 
+            this.Pizarra.AutoScroll = true;
+            this.Pizarra.BackColor = System.Drawing.SystemColors.Window;
+            this.Pizarra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pizarra.Location = new System.Drawing.Point(0, 0);
+            this.Pizarra.Name = "Pizarra";
+            this.Pizarra.Size = new System.Drawing.Size(814, 687);
+            this.Pizarra.TabIndex = 0;
+            this.Pizarra.Click += new System.EventHandler(this.Pizarra_Click);
             // 
             // FormD
             // 

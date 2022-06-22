@@ -126,14 +126,43 @@ namespace Diagramador
                     OpenDialog.FileName = null; //El Open olvida el archivo
                     OpenDialog.Dispose(); //Libera recursos del Dialog
                     Liberar_Todo(); //Libera recursos de pizarra para refrescarla
-                    MessageBox.Show("Archivo Abierto Correctamente");
+                    MessageBox.Show("Diagrama Abierto Correctamente", "Abrir");
                 }
                 else //Error cargando archivo
                 {
                     OpenDialog.Dispose(); //Libera recursos del Dialog
                     Liberar_Todo(); //Libera recursos de pizarra para refrescarla
-                    MessageBox.Show("Error Abriendo Archivo:\nArchivo Corrupto");
+                    MessageBox.Show("Error Abriendo Diagrama:\nArchivo Corrupto", "Abrir");
                 }
+            }
+        }
+        private void Guardar()
+        {
+            if (File.Exists(SaveDialog.FileName))
+            {
+                if ((MessageBox.Show("¿Desea sobreescribir el ultimo diagrama que guardo?", "Guardar", MessageBoxButtons.YesNo)) == (System.Windows.Forms.DialogResult.Yes))
+                {
+                    Pizarra.Save(SaveDialog.FileName);
+                    MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
+                }
+                else //Si no quiere sobreescribir
+                {
+                    if (SaveDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        Pizarra.Save(SaveDialog.FileName);
+                    }
+                    SaveDialog.Dispose();
+                    MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
+                }
+            }
+            else
+            {
+                if (SaveDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    Pizarra.Save(SaveDialog.FileName);
+                }
+                SaveDialog.Dispose();
+                MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
             }
         }
         #endregion
@@ -192,7 +221,7 @@ namespace Diagramador
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Guardar();
         }
 
         private void pngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,7 +233,12 @@ namespace Diagramador
         {
 
         }
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
+
 
     }
 }
