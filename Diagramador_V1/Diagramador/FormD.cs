@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using Dalssoft.DiagramNet;
 
 namespace Diagramador
@@ -14,7 +9,13 @@ namespace Diagramador
     public partial class FormD : Form
     {
         #region Variables y Constantes
-
+        private SaveFileDialog SaveDialog; //Para guardar el estado de guardado en ejecucion y plantilla
+        private OpenFileDialog OpenDialog; //Para plantilla de apertura
+        enum TExport
+        {
+            PNG,
+            JPEG
+        }
         #endregion
 
         #region Load
@@ -25,7 +26,18 @@ namespace Diagramador
         }
         private void FormD_Load(object sender, EventArgs e)
         {
+            #region Config Forma
             this.KeyPreview = true; //Permite que la forma reciba las teclas antes que los componentes
+            #endregion
+            #region Plantillas SaveDialogs
+            SaveDialog = new SaveFileDialog();
+            OpenDialog = new OpenFileDialog();
+            // Save
+            SaveDialog.FileName = "Diagrama";
+            SaveDialog.Filter = "Archivo JSON (*.JSON)|*.JSON|Archivo XML (*.XML)|*.XML";
+            // Open
+            OpenDialog.Filter = "Extensiones Compatibles (*.JSON,*.XML)|*.JSON;*.XML";
+            #endregion
         }
         #endregion
 
@@ -109,6 +121,96 @@ namespace Diagramador
             Pizarra.Document.LinkType = LT; //Indica el tipo de flecha a utilizar
 
         }
+        private void Abrir()
+        {
+            if (OpenDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (Pizarra.Open(OpenDialog.FileName)) //Carga el archivo en la pizarra
+                {
+                    SaveDialog.FileName = OpenDialog.FileName; //Pasa al save el nombre del archivo abierto
+                    OpenDialog.FileName = null; //El Open olvida el archivo
+                    Liberar_Todo(); //Libera recursos de pizarra para refrescarla
+                    MessageBox.Show("Diagrama Abierto Correctamente", "Abrir");
+                }
+                else //Error cargando archivo
+                {
+                    Liberar_Todo(); //Libera recursos de pizarra para refrescarla
+                    MessageBox.Show("Error Abriendo Diagrama:\nArchivo Corrupto", "Abrir");
+                }
+            }
+            OpenDialog.Dispose(); //Libera recursos del Dialog
+        }
+        private void Guardar()
+        {
+            if (File.Exists(SaveDialog.FileName))
+            {
+                if ((MessageBox.Show("¿Desea sobreescribir el ultimo diagrama que guardo?", "Guardar", MessageBoxButtons.YesNo)) == (System.Windows.Forms.DialogResult.Yes))
+                {
+                    Pizarra.Save(SaveDialog.FileName);
+                    MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
+                }
+                else //Si no quiere sobreescribir
+                {
+                    if (SaveDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        Pizarra.Save(SaveDialog.FileName);
+                        MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
+                    }
+                    SaveDialog.Dispose();
+                }
+            }
+            else
+            {
+                if (SaveDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    Pizarra.Save(SaveDialog.FileName);
+                    MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
+                }
+                SaveDialog.Dispose();
+            }
+        }
+        private void Exportar(TExport Formato)
+        {
+            SaveFileDialog ESaveDialog = new SaveFileDialog(); //Dialog para exportar
+            ESaveDialog.FileName = "Diagrama_Imagen"; //Nombre default
+            Bitmap bmp = new Bitmap(Pizarra.Width, Pizarra.Height); //Bitmap
+            Pizarra.DrawToBitmap(bmp, new Rectangle(0, 0, Pizarra.Width, Pizarra.Height)); //Dibujamos la Pizarra en el Bitmap
+
+            switch (Formato)
+            {
+                case TExport.PNG:
+                    {
+                        ESaveDialog.Filter = "Archivo PNG (*.png)|*.png"; //Filtro PNG
+                        ESaveDialog.DefaultExt = ".png"; //Extension PNG
+
+                        if (ESaveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            bmp.Save(ESaveDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                            MessageBox.Show("Exportacion Exitosa!!", "Exportar");
+                        }
+                        break;
+                    }
+                case TExport.JPEG:
+                    {
+                        ESaveDialog.Filter = "Archivo JPEG (*.jpeg)|*.jpeg"; //Filtro JPEG
+                        ESaveDialog.DefaultExt = ".jpeg"; //Extension JPEG
+
+                        if (ESaveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            bmp.Save(ESaveDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            MessageBox.Show("Exportacion Exitosa!!", "Exportar");
+                        }
+                        break;
+                    }
+            }
+
+            ESaveDialog.Dispose();
+        }
+        private void Nuevo()
+        {
+            Pizarra.New(); //Genera una nueva Pizarra en blanco
+            Liberar_Todo(); //Libera Recursos para refrescar
+        }
         #endregion
 
         #region Handlers
@@ -158,7 +260,39 @@ namespace Diagramador
             }
 
         }
-        #endregion
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Abrir();
+        }
 
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+
+        private void pngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exportar(TExport.PNG);
+        }
+
+        private void jpegToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exportar(TExport.JPEG);
+        }
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Este es el Proyecto Final del Grupo 10 para la materia Programacion 3" +
+                " en la UTN.\nAutores:\nBasilio Matijasevich, Agustin\nLopez Frutos Alex\nCabrera, Daniel\n" +
+                "Guini, Galo\nBarrabino, Luciano\n\n¿Desea ver el Codigo Fuente?",
+                "Informacion", MessageBoxButtons.YesNo))
+            {
+                System.Diagnostics.Process.Start("https://github.com/Agustin-Basilio-Matijasevich/Diagramador-Prog3-UTN");
+            }
+        }
+        #endregion
     }
 }

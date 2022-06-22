@@ -778,6 +778,10 @@ namespace Dalssoft.DiagramNet
         #endregion
 
         #region Open/Save File
+        public void New()
+        {
+            document.DeleteAll();
+        }
         public void Save(string fileName)
         {
             IFormatter formatter = new BinaryFormatter() { AssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple };
@@ -786,13 +790,25 @@ namespace Dalssoft.DiagramNet
             stream.Close();
         }
 
-        public void Open(string fileName)
+        public Boolean Open(string fileName)
         {
+            Document BackUp = document; //Back Up de la Pizarra
             IFormatter formatter = new BinaryFormatter() { AssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple };
 			Stream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-			document = (Document) formatter.Deserialize(stream);
+            try
+            {
+                document = (Document)formatter.Deserialize(stream);
+            }
+			catch (System.Runtime.Serialization.SerializationException)
+            {
+                stream.Close();
+                document = BackUp; //Vuelve al BackUP
+                RecreateEventsHandlers();
+                return false; //Retorna error
+            }
 			stream.Close();
 			RecreateEventsHandlers();
+            return true; //Retorna OK
 		}
         public void Save(System.IO.MemoryStream ms)
         {
