@@ -11,6 +11,11 @@ namespace Diagramador
         #region Variables y Constantes
         private SaveFileDialog SaveDialog; //Para guardar el estado de guardado en ejecucion y plantilla
         private OpenFileDialog OpenDialog; //Para plantilla de apertura
+        enum TExport
+        {
+            PNG,
+            JPEG
+        }
         #endregion
 
         #region Load
@@ -165,6 +170,42 @@ namespace Diagramador
                 MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
             }
         }
+        private void Exportar(TExport Formato)
+        {
+            SaveFileDialog ESaveDialog = new SaveFileDialog(); //Dialog para exportar
+            ESaveDialog.FileName = "Diagrama_Imagen"; //Nombre default
+            Bitmap bmp = new Bitmap(Pizarra.Width, Pizarra.Height); //Bitmap
+            Pizarra.DrawToBitmap(bmp, new Rectangle(0, 0, Pizarra.Width, Pizarra.Height)); //Dibujamos la Pizarra en el Bitmap
+
+            switch (Formato)
+            {
+                case TExport.PNG:
+                    {
+                        ESaveDialog.Filter = "Archivo PNG (*.png)|*.png"; //Filtro PNG
+                        ESaveDialog.DefaultExt = ".png"; //Extension PNG
+
+                        if (ESaveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            bmp.Save(ESaveDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                        }
+                        break;
+                    }
+                case TExport.JPEG:
+                    {
+                        ESaveDialog.Filter = "Archivo JPEG (*.jpeg)|*.jpeg"; //Filtro JPEG
+                        ESaveDialog.DefaultExt = ".jpeg"; //Extension JPEG
+
+                        if (ESaveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            bmp.Save(ESaveDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        }
+                        break;
+                    }
+            }
+
+            ESaveDialog.Dispose();
+            MessageBox.Show("Exportacion Exitosa!!", "Exportar");
+        }
         #endregion
 
         #region Handlers
@@ -226,12 +267,12 @@ namespace Diagramador
 
         private void pngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Exportar(TExport.PNG);
         }
 
         private void jpegToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Exportar(TExport.JPEG);
         }
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
