@@ -192,6 +192,13 @@ namespace Dalssoft.DiagramNet
 				OnAppearancePropertyChanged(new EventArgs());
 			}
 		}
+		public void DeleteAll()
+        {
+			elements = new ElementCollection();
+			selectedElements = new ElementCollection();
+			selectedNodes = new ElementCollection();
+			RecreateEventsHandlers();
+		}
 		#endregion
 
 		#region Select Methods
@@ -555,6 +562,13 @@ namespace Dalssoft.DiagramNet
 				return elements.WindowSize;
 			}
 		}
+		internal Point WindowLocation
+        {
+			set
+            {
+				location = value;
+            }
+        }
 
 		internal Size WindowSize
 		{

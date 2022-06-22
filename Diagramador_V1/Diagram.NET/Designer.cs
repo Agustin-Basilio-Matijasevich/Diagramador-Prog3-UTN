@@ -778,6 +778,10 @@ namespace Dalssoft.DiagramNet
         #endregion
 
         #region Open/Save File
+        public void New()
+        {
+            document.DeleteAll();
+        }
         public void Save(string fileName)
         {
             IFormatter formatter = new BinaryFormatter() { AssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple };

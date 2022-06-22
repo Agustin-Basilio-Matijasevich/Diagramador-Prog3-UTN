@@ -129,17 +129,16 @@ namespace Diagramador
                 {
                     SaveDialog.FileName = OpenDialog.FileName; //Pasa al save el nombre del archivo abierto
                     OpenDialog.FileName = null; //El Open olvida el archivo
-                    OpenDialog.Dispose(); //Libera recursos del Dialog
                     Liberar_Todo(); //Libera recursos de pizarra para refrescarla
                     MessageBox.Show("Diagrama Abierto Correctamente", "Abrir");
                 }
                 else //Error cargando archivo
                 {
-                    OpenDialog.Dispose(); //Libera recursos del Dialog
                     Liberar_Todo(); //Libera recursos de pizarra para refrescarla
                     MessageBox.Show("Error Abriendo Diagrama:\nArchivo Corrupto", "Abrir");
                 }
             }
+            OpenDialog.Dispose(); //Libera recursos del Dialog
         }
         private void Guardar()
         {
@@ -155,9 +154,9 @@ namespace Diagramador
                     if (SaveDialog.ShowDialog(this) == DialogResult.OK)
                     {
                         Pizarra.Save(SaveDialog.FileName);
+                        MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
                     }
                     SaveDialog.Dispose();
-                    MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
                 }
             }
             else
@@ -165,9 +164,9 @@ namespace Diagramador
                 if (SaveDialog.ShowDialog(this) == DialogResult.OK)
                 {
                     Pizarra.Save(SaveDialog.FileName);
+                    MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
                 }
                 SaveDialog.Dispose();
-                MessageBox.Show("Diagrama Guardado Correctamente", "Guardar");
             }
         }
         private void Exportar(TExport Formato)
@@ -187,6 +186,7 @@ namespace Diagramador
                         if (ESaveDialog.ShowDialog() == DialogResult.OK)
                         {
                             bmp.Save(ESaveDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                            MessageBox.Show("Exportacion Exitosa!!", "Exportar");
                         }
                         break;
                     }
@@ -198,13 +198,18 @@ namespace Diagramador
                         if (ESaveDialog.ShowDialog() == DialogResult.OK)
                         {
                             bmp.Save(ESaveDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            MessageBox.Show("Exportacion Exitosa!!", "Exportar");
                         }
                         break;
                     }
             }
 
             ESaveDialog.Dispose();
-            MessageBox.Show("Exportacion Exitosa!!", "Exportar");
+        }
+        private void Nuevo()
+        {
+            Pizarra.New(); //Genera una nueva Pizarra en blanco
+            Liberar_Todo(); //Libera Recursos para refrescar
         }
         #endregion
 
@@ -276,10 +281,8 @@ namespace Diagramador
         }
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Nuevo();
         }
         #endregion
-
-
     }
 }
