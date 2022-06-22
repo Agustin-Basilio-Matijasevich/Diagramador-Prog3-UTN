@@ -2,9 +2,15 @@
 Trabajo final de Programacion 3 UTN. Consiste en un diagramador grafico
 
 # Requisitos
-.NET Framework 4.8
-Visual Studio 2022
-Windows Forms
+Para Abrir y Compilar Fuente:
+
+    .NET Framework V4.8
+    Visual Studio 2022
+    Windows Forms
+
+Para Ejecutar:
+
+    .NET Runtime V4.8
 
 # Como Colaborar
 ### Para Realizar un aporte es importante que se cree un branch y se trabaje alli.
